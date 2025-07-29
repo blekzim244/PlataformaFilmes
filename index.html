@@ -1,342 +1,340 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Streaming Infantil</title>
-<!-- Ícones (Font Awesome) -->
-<link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css&quot;
-/>
-<!-- Fonte para o título -->
-<link
-href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap&quot;
-rel="stylesheet"
-/>
-<style>
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family: "Arial", sans-serif;
-}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Streaming Infantil</title>
+    <!-- Ícones (Font Awesome) -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css&quot;
+    />
+    <!-- Fonte para o título -->
+    <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap&quot;
+    rel="stylesheet" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Arial", sans-serif;
+      }
 
-/* Imagem de Fundo (nova adição) */
-body {
-background-image: url("filaaaa.jpg"); /* Substitua pelo seu caminho */
-background-size: cover;
-background-attachment: fixed;
-background-position: center;
-}
+      /* Imagem de Fundo (nova adição) */
+      body {
+        background-image: url("filaaaa.jpg"); /* Substitua pelo seu caminho */
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+      }
 
-/* Header (fixo no topo) */
-header {
-background-color: rgba(0, 0, 0, 0.8); /* Preto com transparência */
-color: #fff;
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 15px 30px;
-position: fixed;
-width: 100%;
-z-index: 1000;
-backdrop-filter: blur(5px); /* Efeito de desfoque (opcional) */
-}
+      /* Header (fixo no topo) */
+      header {
+        background-color: rgba(0, 0, 0, 0.8); /* Preto com transparência */
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+        backdrop-filter: blur(5px); /* Efeito de desfoque (opcional) */
+      }
 
-/* Logo e Menu (lado esquerdo) */
-.left-section {
-display: flex;
-align-items: center;
-}
+      /* Logo e Menu (lado esquerdo) */
+      .left-section {
+        display: flex;
+        align-items: center;
+      }
 
-.logo {
-width: 100px;
-margin-right: 30px;
-}
+      .logo {
+        width: 100px;
+        margin-right: 30px;
+      }
 
-.logo img {
-width: 100%;
-height: auto;
-}
+      .logo img {
+        width: 100%;
+        height: auto;
+      }
 
-nav ul {
-display: flex;
-list-style: none;
-}
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
 
-nav ul li {
-margin-right: 20px;
-}
+      nav ul li {
+        margin-right: 20px;
+      }
 
-nav ul li a {
-color: #fff;
-text-decoration: none;
-font-size: 16px;
-transition: color 0.3s;
-}
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+        transition: color 0.3s;
+      }
 
-nav ul li a:hover {
-color: #ff6b6b;
-}
+      nav ul li a:hover {
+        color: #ff6b6b;
+      }
 
-/* Lado direito: busca, sino, perfil */
-.right-section {
-display: flex;
-align-items: center;
-gap: 20px;
-}
+      /* Lado direito: busca, sino, perfil */
+      .right-section {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
 
-.search-bar {
-display: flex;
-align-items: center;
-background-color: rgba(51, 51, 51, 0.7);
-border-radius: 20px;
-padding: 5px 10px;
-}
+      .search-bar {
+        display: flex;
+        align-items: center;
+        background-color: rgba(51, 51, 51, 0.7);
+        border-radius: 20px;
+        padding: 5px 10px;
+      }
 
-.search-bar input {
-background: transparent;
-border: none;
-color: #fff;
-padding: 5px;
-width: 150px;
-outline: none;
-}
+      .search-bar input {
+        background: transparent;
+        border: none;
+        color: #fff;
+        padding: 5px;
+        width: 150px;
+        outline: none;
+      }
 
-.search-bar input::placeholder {
-color: #ccc;
-}
+      .search-bar input::placeholder {
+        color: #ccc;
+      }
 
-.search-bar button {
-background: none;
-border: none;
-color: #fff;
-cursor: pointer;
-}
+      .search-bar button {
+        background: none;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+      }
 
-.notification-bell,
-.profile-pic {
-color: #fff;
-font-size: 20px;
-cursor: pointer;
-transition: transform 0.3s;
-}
+      .notification-bell,
+      .profile-pic {
+        color: #fff;
+        font-size: 20px;
+        cursor: pointer;
+        transition: transform 0.3s;
+      }
 
-.notification-bell:hover,
-.profile-pic:hover {
-transform: scale(1.1);
-}
+      .notification-bell:hover,
+      .profile-pic:hover {
+        transform: scale(1.1);
+      }
 
-.profile-pic img {
-width: 35px;
-height: 35px;
-border-radius: 50%;
-object-fit: cover;
-border: 2px solid #ffd166;
-}
+      .profile-pic img {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #ffd166;
+      }
 
-/* Conteúdo (com padding para não ficar atrás do header) */
-main {
-padding-top: 80px;
-min-height: 100vh;
-color: #fff;
-background-color: rgba(0, 0, 0, 0.5);
-}
+      /* Conteúdo (com padding para não ficar atrás do header) */
+      main {
+        padding-top: 80px;
+        min-height: 100vh;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
 
-/* Estilo da seção Stranger Things */
-.serie-detail {
-max-width: 800px;
-margin: 40px auto;
-padding: 30px;
-background-color: rgba(0, 0, 0, 0.7);
-border-radius: 10px;
-border-left: 5px solid #e50914;
-}
+      /* Estilo da seção Stranger Things */
+      .serie-detail {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 30px;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 10px;
+        border-left: 5px solid #e50914;
+      }
 
-.serie-header h1 {
-font-size: 3.5rem;
-color: #e50914;
-text-shadow: 0 0 10px rgba(229, 9, 20, 0.5);
-margin-bottom: 15px;
-font-family: "Bebas Neue", cursive;
-}
+      .serie-header h1 {
+        font-size: 3.5rem;
+        color: #e50914;
+        text-shadow: 0 0 10px rgba(229, 9, 20, 0.5);
+        margin-bottom: 15px;
+        font-family: "Bebas Neue", cursive;
+      }
 
-.serie-meta {
-display: flex;
-gap: 15px;
-margin-bottom: 25px;
-color: #ccc;
-}
+      .serie-meta {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 25px;
+        color: #ccc;
+      }
 
-.serie-meta span {
-padding: 3px 8px;
-}
+      .serie-meta span {
+        padding: 3px 8px;
+      }
 
-.match {
-color: #46d369;
-}
+      .match {
+        color: #46d369;
+      }
 
-.age {
-border: 1px solid #ccc;
-border-radius: 3px;
-}
+      .age {
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
 
-.serie-actions {
-display: flex;
-gap: 15px;
-margin-bottom: 30px;
-}
+      .serie-actions {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 30px;
+      }
 
-.play-button,
-.list-button {
-padding: 10px 25px;
-border: none;
-border-radius: 5px;
-font-size: 1.1rem;
-cursor: pointer;
-display: flex;
-align-items: center;
-gap: 10px;
-transition: all 0.3s;
-}
+      .play-button,
+      .list-button {
+        padding: 10px 25px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s;
+      }
 
-.play-button {
-background-color: #e50914;
-color: white;
-}
+      .play-button {
+        background-color: #e50914;
+        color: white;
+      }
 
-.play-button:hover {
-background-color: #ffffff;
-transform: scale(1.05);
-}
+      .play-button:hover {
+        background-color: #ffffff;
+        transform: scale(1.05);
+      }
 
-.list-button {
-background-color: rgba(109, 109, 110, 0.7);
-color: white;
-}
+      .list-button {
+        background-color: rgba(109, 109, 110, 0.7);
+        color: white;
+      }
 
-.list-button:hover {
-background-color: rgba(109, 109, 110, 0.9);
-}
+      .list-button:hover {
+        background-color: rgba(109, 109, 110, 0.9);
+      }
 
-.synopsis {
-font-size: 1.2rem;
-line-height: 1.6;
-margin-bottom: 20px;
-}
+      .synopsis {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
 
-.details {
-color: #ccc;
-line-height: 1.8;
-}
+      .details {
+        color: #ccc;
+        line-height: 1.8;
+      }
 
-.details strong {
-color: white;
-}
-</style>
-</head>
-<body>
-<!-- Cabeçalho Fixo -->
-<header>
-<div class="left-section">
-<div class="logo">
-<img src="netiflix.png" alt="Logo" />
-</div>
-<nav>
-<ul>
-<li><a href="#">Início</a></li>
-<li><a href="#">Séries</a></li>
-<li><a href="#">Filmes</a></li>
-<li><a href="#">Bombando</a></li>
-<li><a href="#">Minha Lista</a></li>
-<li><a href="#">Navegar por Idiomas</a></li>
-</ul>
-</nav>
-</div>
-<div class="right-section">
-<div class="search-bar">
-<input type="text" placeholder="Buscar... (infantil)" />
-<button type="submit"><i class="fas fa-search"></i></button>
-</div>
-<div class="notification-bell">
-<i class="fas fa-bell"></i>
-</div>
-<div class="profile-pic">
-<img src="miranha.jpeg" alt="Perfil" />
-</div>
-</div>
-</header>
+      .details strong {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Cabeçalho Fixo -->
+    <header>
+      <div class="left-section">
+        <div class="logo">
+          <img src="netiflix.png" alt="Logo" />
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Séries</a></li>
+            <li><a href="#">Filmes</a></li>
+            <li><a href="#">Bombando</a></li>
+            <li><a href="#">Minha Lista</a></li>
+            <li><a href="#">Navegar por Idiomas</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="right-section">
+        <div class="search-bar">
+          <input type="text" placeholder="Buscar... (infantil)" />
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="notification-bell">
+          <i class="fas fa-bell"></i>
+        </div>
+        <div class="profile-pic">
+          <img src="miranha.jpeg" alt="Perfil" />
+        </div>
+      </div>
+    </header>
 
-<!-- Conteúdo Principal -->
-<main>
-<section class="serie-detail">
-<div class="serie-header">
-<h1>STRANGER THINGS</h1>
-<div class="serie-meta">
-<span class="match">98% de compatibilidade</span>
-<span class="year">2016</span>
-<span class="age">A16</span>
-<span class="seasons">4 temporadas</span>
-</div>
-</div>
+    <!-- Conteúdo Principal -->
+    <main>
+      <section class="serie-detail">
+        <div class="serie-header">
+          <h1>STRANGER THINGS</h1>
+          <div class="serie-meta">
+            <span class="match">98% de compatibilidade</span>
+            <span class="year">2016</span>
+            <span class="age">A16</span>
+            <span class="seasons">4 temporadas</span>
+          </div>
+        </div>
 
-<div class="serie-info">
-<p class="synopsis">
-Quando um garoto desaparece, a cidade toda participa nas buscas. Mas
-o que encontram são segredos, forças sobrenaturais e uma menina que
-vai ajudar o grupo a encarar o mistério.
-</p>
+        <div class="serie-info">
+          <p class="synopsis">
+            Quando um garoto desaparece, a cidade toda participa nas buscas. Mas
+            o que encontram são segredos, forças sobrenaturais e uma menina que
+            vai ajudar o grupo a encarar o mistério.
+          </p>
 
-<div class="details">
-<p>
-<strong>Elenco:</strong> Millie Bobby Brown, Finn Wolfhard, Winona
-Ryder
-</p>
-<p><strong>Gêneros:</strong> Séries de TV, Terror, Sci-Fi</p>
-<p>
-<strong>Classificação:</strong> Assustador, Violência, Linguagem
-</p>
-</div>
-<div class="serie-actions">
-<button class="play-button">
-<i class="fas fa-play"></i> Reproduzir
-</button>
-<button class="list-button">
-<i class="fas fa-plus"></i> Minha Lista
-</button>
-</div>
-</div>
-</section>
-</main>
+          <div class="details">
+            <p>
+              <strong>Elenco:</strong> Millie Bobby Brown, Finn Wolfhard, Winona
+              Ryder
+            </p>
+            <p><strong>Gêneros:</strong> Séries de TV, Terror, Sci-Fi</p>
+            <p>
+              <strong>Classificação:</strong> Assustador, Violência, Linguagem
+            </p>
+          </div>
+          <div class="serie-actions">
+            <button class="play-button">
+              <i class="fas fa-play"></i> Reproduzir
+            </button>
+            <button class="list-button">
+              <i class="fas fa-plus"></i> Minha Lista
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
 
-<script>
-// Efeitos interativos (opcional)
-document
-.querySelector(".notification-bell")
-.addEventListener("click", function () {
-alert("Novas notificações! 🎠");
-});
+    <script>
+      // Efeitos interativos (opcional)
+      document
+        .querySelector(".notification-bell")
+        .addEventListener("click", function () {
+          alert("Novas notificações! 🎠");
+        });
 
-// Efeito no botão de reprodução
-document
-.querySelector(".play-button")
-.addEventListener("click", function () {
-alert("Iniciando Stranger Things... 🎬");
-});
+      // Efeito no botão de reprodução
+      document
+        .querySelector(".play-button")
+        .addEventListener("click", function () {
+          alert("Iniciando Stranger Things... 🎬");
+        });
 
-// Efeito no botão "Minha Lista"
-document
-.querySelector(".list-button")
-.addEventListener("click", function () {
-const button = this;
-button.innerHTML = '<i class="fas fa-check"></i> Adicionado';
-button.style.backgroundColor = "#46d369";
-setTimeout(() => {
-button.innerHTML = '<i class="fas fa-plus"></i> Minha Lista';
-button.style.backgroundColor = "rgba(109, 109, 110, 0.7)";
-}, 2000);
-});
-</script>
-</body>
+      // Efeito no botão "Minha Lista"
+      document
+        .querySelector(".list-button")
+        .addEventListener("click", function () {
+          const button = this;
+          button.innerHTML = '<i class="fas fa-check"></i> Adicionado';
+          button.style.backgroundColor = "#46d369";
+          setTimeout(() => {
+            button.innerHTML = '<i class="fas fa-plus"></i> Minha Lista';
+            button.style.backgroundColor = "rgba(109, 109, 110, 0.7)";
+          }, 2000);
+        });
+    </script>
+  </body>
 </html>
